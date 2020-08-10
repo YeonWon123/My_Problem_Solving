@@ -44,3 +44,9 @@
 *.tlog
 *.ilk
 *.enc
+UCPC 2020/UCPC 2020 본선/J/.vs/J/v16/Browse.VC.db-shm
+UCPC 2020/UCPC 2020 본선/J/.vs/J/v16/Browse.VC.db-wal
+*.db-shm
+*.db-wal
+*.manifest
+*.testlog

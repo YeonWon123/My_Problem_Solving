@@ -1,0 +1,28 @@
+6/25(목) 	  저녁 7시 ~ 11시 진행 : 최단거리 알고리즘, 순회 알고리즘
+
+6/30(화) 	  저녁 8시 ~ 11시 진행 : 그래프 이론, maxflow, union-find, tree, TSP
+7/4(토) 	- 저녁 6시 ~ 11시 진행 - 실전 연습 1 (ICPC 2015 - Daejeon Nationalwide Internet Competition 2015)
+7/5(일) 	- 저녁 10시 ~ 11시 30분 - 실전 연습 1 피드백
+
+7/10(금) - 저녁 8시 ~ 11시 진행 	 : DP + 그래프 이론(너비우선탐색, 최단거리) 진행 	// UCPC 2019 예선 문제를 과제로 내고, 풀이
+7/14(화) - 저녁 8시 ~ 11시 30분 진행	 : DP + 그래프 이론(maxflow) + Tree 진행 		// UCPC 2018 예선 문제를 과제로 내고, 풀이
+7/16(목) - 저녁 8시 ~ 11시 30분 진행	 : Greedy + Backtracking + Tree + 수학(정수론) 진행 	// UCPC 2015 예선 문제를 과제로 내고, 풀이
+
+7/18(토) - 저녁 7시 ~ 10시 30분 진행 	- 실전 연습 2 : ICPC 2012 - Daejeon Nationalwide Internet Competition 2012 
+7/19(일) - 저녁 7시 ~ 11시 진행 		- 실전 연습 3 : UCPC 2016
+
+< 예선주 스터디 >
+
+실전 연습 4
+ICPC 2004 - Seoul Nationalwide Internet Competition 2004
+ICPC 2012 - Daejeon Nationalwide Internet Competition 2012
+UCPC 2018 예선?
+최종 연습 : ICPC 2019 / 2018 연습
+
+https://zigui.tistory.com/10?category=636684 - 실전 감각
+
+< 본선주 스터디 >
+
+실전 연습 5 : UCPC 2018 본선
+
+실전 연습 6 : UCPC 2019 본선

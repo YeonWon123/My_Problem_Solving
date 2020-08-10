@@ -1,0 +1,71 @@
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+
+int arr[500001];   //arr[i]는 i가 소수이면 1, 아니면 0
+int cost[10001];   //cost[i]는 가격이 i인 사탕의 개수
+long long sum[500001];   //sum[i]는 합이 i를 만드는 사탕의 조합의 수
+int N;
+int max_cost = -1;   //가진 사탕 중 가장 비싼 사탕
+int sum_cost = 0;   //가진 사탕의 모든 합
+
+//어떤 숫자가 소수인지 아닌지 판단하는 함수
+//n이 소수이면 return 1, 아니면 return 0
+int func(int n)
+{
+   if (n == 1) { return 0; }
+   if (n == 2) { return 1;  }
+   for (int i = 2; i * i <= n; i++) {
+      if (n % i == 0) {
+         return 0;
+      }
+   }
+   return 1;
+}
+
+//
+void calc()
+{
+   int pre_cost = 0;   //현재까지 구한 cost의 합
+   for (int i = 1; i <= max_cost; i++) {
+      int num = cost[i];
+      if (!num) { continue; }
+      pre_cost += i * num;
+      for (int j = pre_cost; j > 0; j--) {
+         for (int k = num; k >= 1; k--) {
+            int index = j - i * k;
+            if (index >= 0) {
+               sum[j] += sum[index];
+            }
+         }
+      }
+   }
+}
+
+int main()
+{
+   memset(arr, 0, sizeof(arr));
+   memset(cost, 0, sizeof(cost));
+   memset(sum, 0, sizeof(sum));
+   sum[0] = 1;
+   for (int i = 1; i <= 500000; i++) {
+      arr[i] = func(i);
+   }
+   //입력 받기
+   cin >> N;
+   for (int i = 0; i < N; i++) {
+      int temp;
+      cin >> temp;
+      cost[temp]++;
+      sum_cost += temp;
+      if (temp > max_cost) { max_cost = temp; }
+   }
+   calc();
+   long long ans = 0;
+   for (int i = 1; i <= sum_cost; i++) {
+      if (func(i)) { ans += sum[i]; }
+   }
+   cout << ans * (cost[0] + 1);
+   return 0;
+}

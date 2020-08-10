@@ -1,0 +1,15 @@
+< 2016 UCPC >
+
+0:00:00 준규 E, 효민 F, 윤원 L -> E
+0:12:00 윤원 E wrong answer
+0:13:00 윤원 E wrong answer
+0:14:00 윤원 E solve
+0:15:00 준규 L, 효민 F, 윤원 C
+0:30:00 준규 L -> K, 윤원 C -> L
+0:34:00 효민 F solve, 효민 B
+0:42:00 윤원 L wrong answer
+0:45:00 윤원 L solve, 윤원 C
+0:55:00 효민, 윤원 B
+1:04:00 준규 K -> D -> C
+1:13:00 윤원 B wrong answer
+1:38:00 윤원 B -> J, 효민 B -> D

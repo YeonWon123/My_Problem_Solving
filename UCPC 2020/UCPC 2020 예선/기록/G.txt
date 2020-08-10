@@ -1,0 +1,85 @@
+// #include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <set>
+#include <map>
+#include <cstring>
+#include <string>
+#include <algorithm>
+#include <queue>
+#include <stack>
+#include <cmath>
+using namespace std;
+
+vector<int> graph[200001];
+queue<int> q;
+int counts[200001] = { 0, };
+int isRumor[200001] = { -1 };
+int time = -1;
+
+int main(void)
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL); cout.tie(NULL);
+
+	memset(isRumor, -1, sizeof(isRumor));
+
+	int N, M;
+	cin >> N;
+
+	int a;
+	for (int i = 1; i <= N; i++) {
+		cin >> a;
+		while (a != 0) {
+			counts[i]++;
+			graph[i].push_back(a);
+			cin >> a;
+		}
+	}
+	cin >> M;
+	for (int i = 0; i < M; i++) {
+		cin >> a;
+		isRumor[a] = 0;
+		q.push(a);
+	}
+
+	q.push(time);
+	int now, n_count;
+	while (!q.empty()) {
+		now = q.front();
+		q.pop();
+
+		// 뽑은 값이 음수이면 이는 time이다.
+		// 따라서 다음 time을 넣어 준다.
+		if (now < 0) {
+			// queue가 비어 있으면 그냥 나감
+			if (q.empty()) break;
+			time--;
+			q.push(time);
+			continue;
+		}
+
+		if (isRumor[now] != -1 && isRumor[now] != 0) continue;
+		isRumor[now] = (time + 1) * -1; // 지금 수행!
+
+		for (int i = 0; i < graph[now].size(); i++) {
+			n_count = 0;
+			if (isRumor[graph[now][i]] >= 0) continue;
+			for (int j = 0; j < graph[graph[now][i]].size(); j++) {
+				if (isRumor[graph[graph[now][i]][j]] >= 0) n_count++;
+			}
+			// 주변인의 절반이 넘는 인원이 루머를 믿으면, 자기도 믿어야 함
+			if (n_count * 2 >= graph[graph[now][i]].size()) {
+				q.push(graph[now][i]);
+			}
+		}
+
+
+	}
+
+	for (int i = 1; i <= N; i++) {
+		cout << isRumor[i] << " ";
+	}
+
+	return 0;
+}

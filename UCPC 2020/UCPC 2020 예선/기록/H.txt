@@ -1,0 +1,35 @@
+//#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <stack>
+#include <queue>
+#include <set>
+#include <map>
+#include <algorithm>
+#include <cstring>
+#include <algorithm>
+#include <cmath>
+#include <limits>
+using namespace std;
+
+int N;
+int num_2 = 0;
+int num_1 = 0;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL); cout.tie(NULL);
+	cin >> N;
+	for (int i = 0; i < N; i++) {
+		int temp;
+		cin >> temp;
+		num_2 += temp / 2;
+		num_1 += temp % 2;
+	}
+	if (num_2 >= num_1 && (num_2 - num_1) % 3 == 0) {
+		cout << "YES";
+	}
+	else {
+		cout << "NO";
+	}
+}
