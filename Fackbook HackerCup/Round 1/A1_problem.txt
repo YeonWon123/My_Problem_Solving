@@ -1,0 +1,36 @@
+Note: This problem shares similarities with Chapters 2 and 3. The solution to any chapter may help with solving the others, so please consider reading all of them.
+
+After a highly successful haul from the log drive, Connie the contractor is tasked with building a number of houses in the Great White North. For each job, the client has provided a floor plan consisting of N rectangular rooms, numbered from 1 to N. From a bird's-eye view, the rooms are arranged on a 2-dimensional plane, with axis-aligned walls. The southern wall of each room has y-coordinate 0. The i-th rectangular room has southwest corner (L_i, 0) and northeast corner (L_i + W, H_i).
+
+In this chapter of the problem, all N rooms have the same width W, and have strictly increasing L values. (L_1 < L_2 < ... < L_N)
+
+Since houses often have shared regions (such as a common living/dining area), these rooms may overlap with one another.
+
+Unfortunately, log houses are quite susceptible to air leakage. Connie knows that she must install additional insulation to keep the houses warm and energy-efficient during the harsh Canadian winters. In order to determine the amount of insulation material required, Connie will first need to gather some metrics: the perimeters around various combinations of rooms.
+Specifically, let P_i be the perimeter of the union of rooms 1 to i. Note that any given point is considered to be within the union if and only if it's within at least one of the rooms' rectangles (including right on an edge), and that the union might not form a single connected polygon. Please help compute the product (P_1 * P_2 * ... * P_N).
+
+As this product may be very large, you should compute its value modulo 1,000,000,007.
+
+In order to reduce the size of the input, the rooms' coordinates will not all be provided explicitly. 
+Instead, you'll be given the first K values L_{1..K} and H_{1..K}, as well as the two quadruples of constants (A_L, B_L, C_L, D_L) and (A_H, B_H, C_H, D_H), and must then compute L_{(K+1)..N} and H_{(K+1)..N} as follows:
+
+Input
+Input begins with an integer T, the number of floor plans. For each plan, there are 5 lines.
+The first line contains the 3 space-separated integers N, K, and W.
+The second line contains the K space-separated integers L_{1..K}
+The third line contains the 4 space-separated integers A_L, B_L, C_L, and D_L.
+The fourth line contains the K space-separated integers H_{1..K}.
+The fifth line contains the 4 space-separated integers A_H, B_H, C_H, and D_H.
+
+Output
+For the iith floor plan, print a line containing "Case #i: " followed by a single integer, the product (P_1 * P_2 * ... * P_N) as defined above, modulo 1,000,000,007.
+
+Explanation of Sample
+For the first floor plan, L = [1, 2] and H = [3, 3]. The union of just the first room's rectangle is equivalent to that rectangle, which has a width of 2 and a height of 3, and therefore a perimeter of 10. The union of both rooms' rectangles is equivalent to a single rectangle with a width of 3 and a height of 3 (with southwest corner (1, 0)), having a perimeter of 12. The answer is therefore (10∗12) modulo 1,000,000,007=120.
+
+For the second floor plan, P = [10, 20]
+For the third floor plan, P = [14, 18, 24, 36, 42]
+For the fourth floor plan: 
+L = [9, 14, 15, 19, 23, 27, 31, 35, 39, 43]
+H = [12, 7, 16, 31, 30, 27, 16, 17, 2, 15]
+P = [40, 50, 60, 98, 106, 114, 122, 130, 138, 146]
