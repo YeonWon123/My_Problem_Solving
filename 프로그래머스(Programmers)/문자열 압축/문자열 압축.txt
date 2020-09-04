@@ -1,0 +1,9 @@
+앞에서부터 나눠서 같을 경우 묶으면 된다!
+
+abcabcabcabcdededededede
+
+1 -> a b c a b c a b c a b c d e d e d e d e d e d e
+2 -> ab ca bc ab ca bc de de de de de de
+3 -> abc abc abc abc ded ede ded ede
+4 -> abca bcab cabc dede dede dede
+6 -> abcabc abcabc dedede dedede
